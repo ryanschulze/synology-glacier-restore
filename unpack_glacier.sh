@@ -20,7 +20,7 @@ destDir="${3:-}"
 
 
 # generate list of file mappings from sqlite database
-fileList="$(sqlite3 "${mappingFile}" "select basePath,archiveID from file_info_tb WHERE 1")"
+fileList="$(sqlite3 "${mappingFile}" "select basePath,archiveID from file_info_tb")"
 
 for pair in ${fileList}; do
 	# split source and destination from string
